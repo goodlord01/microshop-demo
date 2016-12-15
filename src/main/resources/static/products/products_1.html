@@ -1,0 +1,55 @@
+<div ng-controller="ProductsController as vm">
+
+    <ng-include src="'partials/market.html'"></ng-include>
+
+    <div class="container-fluid" style="padding:0 0 4rem; line-height: 1">
+        <ng-include src="'partials/loading.html'" ng-show="vm.showLoading"></ng-include>
+
+        <img src="assets/img/demo.jpg" class="responsive_img" style="position:relative">
+
+
+        <!--<div class="detail-panel__content" style="position:relative">-->
+            <!--<div class="detail-content__loop-picture">-->
+                <!--<img src="assets/img/products/details/product1/product_1_detail_1.jpg">-->
+            <!--</div>-->
+        <!--</div>-->
+        <div id="footer" style="text-align: center;bottom:5px;width:100%;height: 60px;padding: 10px;">
+            <img src="assets/img/products/logo.png" style="width:40px;vertical-align: middle">
+
+            <div style="display: inline-block;vertical-align: middle;text-align: left">
+                <span style="color:#999;font-size: 12px;display: block;">技术支持：广州云溯科技有限公司</span>
+                <span style="color:#999;font-size: 12px;display: block;">联系电话：13588319441</span>
+            </div>
+        </div>
+
+        <div class="ys-dialog wechat-qrcode__dialog" ng-show="vm.showBarCode" style="display:block">
+            <div class="ys-dialog__mask" ng-click="vm.showBarCode=false">
+            </div>
+            <div class="ys-dialog__content">
+                <img src="assets/img/seller/seller_qrcode.png">
+
+                <p style="margin-bottom:0;">长按二维码联系卖家</p>
+            </div>
+        </div>
+        <div class="row-height detail-panel__footer">
+            <div ng-repeat="item in vm.tabs" class="text-xs-center col-height"
+                 style="width:15%; font-size:0.9em"
+                 ng-click="vm.switchTab($index)"
+                 ng-style="{'color':vm.highlightTab($index)? 'red' :''}">
+                <a><img ng-src="assets/img/products/{{item.img}}_{{vm.highlightTab($index) ? 'on' : 'off'}}.png"
+                        class="tab-icon"></a>
+
+                <div style="margin-top: 4px">{{item.name}}</div>
+            </div>
+        </div>
+
+        <div class="auth-share-cover" ng-click="vm.showShare = false" ng-show="vm.showShare"></div>
+
+    </div>
+
+</div>
+
+
+
+
+

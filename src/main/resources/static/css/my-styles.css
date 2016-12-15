@@ -1,0 +1,383 @@
+/*html, body {margin: 0; height: 100%; overflow: auto}*/
+
+
+body {
+    font-family: "Microsoft YaHei", "微软雅黑", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+
+.l-font-size {
+    font-size:1.2em;
+}
+.m-font-size {
+    font-size:1em;
+}
+.s-font-size {
+    font-size:0.8em;
+}
+.xs-font-size {
+    font-size:0.6em;
+}
+
+.lg-border {
+    border:1px solid lightgray;
+}
+
+
+.row-height {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.col-height {
+    display: table-cell;
+    vertical-align: middle;
+    float:none;
+}
+
+
+.line-2 {
+    color:rgb(78,78,78);
+    font-size:0.9em;
+}
+
+.ul {
+    padding:0;
+    margin:0;
+}
+
+.ul li {
+    display: inline;
+    text-align: center;
+}
+
+.a {
+    display: inline-block;
+    width: 25%;
+    padding: 0.8rem 0;
+    margin: 0;
+    text-decoration: none;
+    color: #333;
+    font-size:1rem;
+}
+
+.two.active ~ hr {
+    margin-left: 25%;
+}
+
+.three.active ~ hr {
+    margin-left: 50%;
+}
+
+.four.active ~ hr {
+    margin-left: 75%;
+}
+
+hr {
+    height: .1rem;
+    width: 25%;
+    margin: 0;
+    background: tomato;
+    border: none;
+    transition: .3s ease-in-out;
+}
+
+li.current {
+    color:rgb(254,18,57);
+}
+
+.whitelike {
+    background: rgb(250,250,250);
+}
+
+.img {
+    width:100%; height:auto;
+}
+.r-color {
+    color:#ff4354;
+}
+
+.w-bg {
+    background:white;
+}
+
+.custom-btn-1 {
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 4px;
+    display: inline-block;
+    width: 30%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    /* height: 100%; */
+}
+
+.custom-btn {
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+span.important-text {
+    font-size: larger;
+}
+
+.red_dot-circle {
+    background: #f00;
+    width: 18px;
+    height: 18px;
+    line-height:18px;
+    border-radius: 50%;
+    display:inline-block;
+    position:absolute;
+    top:10px;
+    text-align: center;
+}
+
+.red_dot-text {
+    color:white;
+    font-size:12px;
+}
+
+/*common for all pages*/
+  .buy_button {
+      background: rgb(255, 62, 86);
+      color: white;
+  }
+
+.responsive_img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+#bottomNav a {
+    font-size: 0.9rem;
+    color: darkgray;
+    text-decoration: none;
+}
+
+#bottomNav a:hover {
+    color: rgb(255, 69, 87);
+}
+
+.tab-icon {
+    width: auto;
+    height: 1.6rem;
+}
+
+.animate-show,
+.animate-hide {
+    -webkit-transition: all linear 0.4s;
+    -moz-transition: all linear 0.4s;
+    -ms-transition: all linear 0.4s;
+    -o-transition: all linear 0.4s;
+    transition: all linear 0.4s;
+}
+
+.animate-show.ng-hide-remove,
+.animate-hide.ng-hide-add.ng-hide-add-active {
+    opacity: 0;
+    display: block !important;
+}
+
+.animate-hide.ng-hide-add,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+    display: block !important;
+}
+
+.btn-img {
+    width: 20px;
+    height: auto;
+}
+
+.auth-share-cover {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.8) url(../assets/img/products/auth_share.png) no-repeat;
+    background-size: 100%;
+}
+
+.btn-bg {
+    background: rgb(249, 55, 51);
+}
+
+.number {
+    width: 10.5%;
+    margin-right: 8px;
+}
+
+/*order list*/
+.container_bg {
+    background:#ff4354;
+}
+.order_number {
+    color: #999999;
+    padding-left:10px;
+    padding-right:0;
+}
+
+.product_img {
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.product_name {
+    color: #525252;
+}
+
+.order_date {
+    color: #999999;
+    margin:8px 0;
+}
+
+.btn_bg_color {
+    background: #ff4354;
+    color:white;
+}
+
+.lg-border {
+    border: 1px solid #ebebeb;
+}
+
+/* iphone 5 */
+@media only screen and (min-device-width: 320px) and (max-device-height: 667px) {
+    .order_number {
+        font-size:13px;
+    }
+    .product_img {
+        width:35%;
+    }
+}
+
+/* iphone 6 6s */
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) {
+    .order_number {
+        font-size:14px;
+    }
+    .product_img {
+        width:30%;
+    }
+}
+
+/* iphone 6 6s plus */
+@media only screen and (min-device-width: 412px) and (max-device-height: 736px) {
+    .order_number {
+        font-size: 16px;
+    }
+    .product_img {
+        width:27%;
+    }
+}
+
+/* modals */
+a[ ng-click ] {
+    color: red ;
+    cursor: pointer ;
+    text-decoration: underline ;
+}
+
+div.m-modals {
+    background-color: rgba( 0, 0, 0, 0.8 ) ;
+    bottom: 0px ;
+    left: 0px ;
+    position: fixed ;
+    right: 0px ;
+    top: 0px ;
+}
+
+div.m-modals.ng-hide {
+    background-color: rgba( 0, 0, 0, 0 );
+}
+
+div.m-modals.ng-hide-add.ng-hide-add-active,
+div.m-modals.ng-hide-remove.ng-hide-remove-active {
+    transition: 250ms ease all ;
+}
+
+div.m-modals > .t-modal {
+    background-color: #FAFAFA ;
+    border-radius: 3px 3px 3px 3px ;
+    box-sizing: border-box ;
+    -moz-box-sizing: border-box ;
+    padding: 20px 20px 20px 20px ;
+    position: fixed ;
+    left: 50% ;
+    top: 50%;
+    width: 75%;
+    height: 180px;
+    transform: translate(-50%, -50%);
+}
+
+div.m-modals.ng-hide-add > .t-modal {
+    top: 50% ;
+    transition: 250ms ease top ;
+    opacity: 1;
+}
+
+div.m-modals.ng-hide-add.ng-hide-add-active > .t-modal {
+    top: 0 ;
+    opacity: 0;
+}
+
+/*thumb section*/
+.gravatarURL .thumbCircle:before {
+    content: '';
+    padding-top: 100%;
+    display: block;
+}
+
+.gravatarURL .thumbCircle {
+    width: 13%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.gravatarURL {
+    padding-left: 12px;
+    margin-bottom: 28px;
+    position: relative;
+    width: 100%;
+}
+
+.gravatarURL:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0.75rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.gravatarURL .gravatarName {
+    position: absolute;
+    bottom: -40%;
+    font-size: 14px;
+    left: 0;
+    width: 100%;
+    color: #373a3c;
+    display: block;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+

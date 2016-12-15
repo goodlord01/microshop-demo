@@ -1,0 +1,9 @@
+<a ui-sref=thumbs({productId:productId})>
+    <div class="gravatarURL">
+        <div ng-repeat="item in thumbs" class="thumbCircle"
+             ng-style="{'background-image':'url({{item.gravatar_url}})'}">
+
+            <span class='gravatarName'>{{item.name}}</span>
+        </div>
+    </div>
+</a>

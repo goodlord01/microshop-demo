@@ -1,0 +1,46 @@
+server:
+  port: 8280
+management:
+  port: 8281
+  address: 127.0.0.1
+  add-application-context-header: false
+
+multipart:
+  max-file-size: 20MB
+  max-request-size: 20MB
+
+spring:
+  profiles.active: test
+  application.name: 'microshop'
+  mvc.throw-exception-if-no-handler-found: true
+  jpa:
+    show_sql: true
+    database: MYSQL
+    generate_ddl: false
+  datasource:
+    url: jdbc:mysql://test-yunsoo.cquafg9deiuc.rds.cn-north-1.amazonaws.com.cn:3306/microshop?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: admin201512
+    testWhileIdle: true
+    validationQuery: select 1
+
+yunsoo:
+  debug: true
+  environment: dev
+  wechat:
+    app_id: wxe3804cb3dff62fe3
+    app_secret: 7d553f1bbfbe9f86f973bce5d0ee7852
+    private_key: H97q3vDa6z2rsRppSyQW60aeaewED23d
+    mch_id: 1405965002
+    base_url: http://dev.yunsu.co/test/microshop/wechat/
+  client:
+    third_api: http://dev-api.yunsu.co:4480/
+    file_api: http://dev-api.yunsu.co:4180/
+  encode:
+    salt: QPgW3vV14tfon2fAonIuz8sKp5rN2SnqXSJMlaiU
+
+logging:
+  file: var/log/yunsoo/microshop.log
+  level:
+    org.springframework: 'INFO'
+    org.hibernate: 'INFO'

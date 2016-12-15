@@ -1,0 +1,33 @@
+# Gradle
+.gradle
+build/
+classes/
+
+# Intellij IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.settings/
+.classpath
+.project
+
+# Logs
+logs/
+*.log
+
+bower.json
+
+c:
+
+node_modules/
+
+*/bower_components/
+
+src/main/resources/static/bower_components/
+
+src/main/resources/static/assets/img/.DS_Store
+
+src/main/resources/static/.DS_Store

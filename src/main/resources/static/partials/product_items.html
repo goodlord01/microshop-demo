@@ -1,0 +1,14 @@
+<div style="display: inline-block; width:100%">
+    <h3 style="text-align: center; font-size: 16px; font-weight:400; font-style: normal; color:#000000;padding: .53rem 0;">相关推荐</h3>
+    <ul style="margin: .13rem .45rem 0; padding:0">
+        <li ng-repeat="item in products"
+            style="float:left; width:50%; position:relative; margin-bottom: 1rem; list-style: none;">
+            <a ng-click="goToProduct({id:$index+1})"  style="padding: .08rem .2rem;display: block; color:rgb(50, 50, 50);text-decoration: none;">
+                            <span style="display: block; width: 100%; margin-bottom: 10px;">
+                              <img ng-src="assets/img/products/details/product{{$index+1}}/product_{{$index+1}}_thumb.jpg" style="width: 100%;display: block;">
+                            </span>
+                <span>￥{{item.price}}</span>
+            </a>
+        </li>
+    </ul>
+</div>

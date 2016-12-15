@@ -1,0 +1,74 @@
+<style>
+    .bg_color_consult {
+        background: rgb(248, 248, 248);
+    }
+
+    /* iphone 5 */
+    @media only screen and (min-device-width: 320px) and (max-device-height: 667px) {
+        .header-font-size {
+            font-size: 13px;
+        }
+    }
+
+    /* iphone 6 6s */
+    @media only screen and (min-device-width: 375px) and (max-device-height: 667px) {
+        .header-font-size {
+            font-size: 14px;
+        }
+    }
+
+    /* iphone 6 6s plus */
+    @media only screen and (min-device-width: 414px) and (max-device-height: 736px) {
+        .header-font-size {
+            font-size: 16px;
+        }
+    }
+
+    .consult_img {
+        width: 100%;
+    }
+</style>
+
+<div class="bg_color_consult" style="height:100%" ng-controller="ConsultController as vm">
+
+    <div id="yang03_left"
+         style="position:fixed;z-index:100;top:0;left:0;width:100%;height:100%;background: rgba(0, 0, 0, 0.96);display:none">
+        <div style="border:dashed 1px #ffffff;position:absolute;top:19%;left:50%;height:10%;"></div>
+        <img src="assets/img/products/close.png" style="width:10%;position:absolute;top:12%;left:45%;"
+             class="pop_close">
+
+        <div style="width:70%;position:absolute;top:30%;left:15%;text-align:right"><img
+                src="assets/img/products/barcode_baoge.png" style="width:100%">
+
+            <p style="color:#ffffff;text-align:center;font-size:16px;margin-top:10px;">长按识别二维码</p>
+        </div>
+    </div>
+    <div id="yang03_right"
+         style="position:fixed;z-index:100;top:0;left:0;width:100%;height:100%;background: rgba(0, 0, 0, 0.96);display:none">
+        <div style="border:dashed 1px #ffffff;position:absolute;top:19%;left:50%;height:10%;"></div>
+        <img src="assets/img/products/close.png" style="width:10%;position:absolute;top:12%;left:45%;"
+             class="pop_close">
+
+        <div style="width:70%;position:absolute;top:30%;left:15%;text-align:right"><img
+                src="assets/img/products/barcode_follow.png" style="width:100%">
+
+            <p style="color:#ffffff;text-align:center;font-size:16px;margin-top:10px;">长按识别二维码</p>
+        </div>
+    </div>
+
+    <div style="width:100%;">
+        <img src="assets/img/consult/consult_top.png" class="consult_img">
+    </div>
+    <div style="width:100%;position: relative">
+        <img src="assets/img/consult/consult_middle.png" class="consult_img">
+        <a id="yang03_left_a" style="position:absolute;top:0;left:0;width:30%;height:100%;display:inline-block;z-index:50"></a>
+    </div>
+    <div style="width:100%;position: relative">
+        <img src="assets/img/consult/consult_bottom.png" class="consult_img">
+        <a id="yang03_right_a" style="position:absolute;top:0;left:0;width:30%;height:100%;display:inline-block;z-index:50"></a>
+    </div>
+    <div class="text-xs-center header-font-size" style="padding:15px 4px;">
+        <img src="assets/img/products/logo.png" style="width:20px"> 广州云溯科技有限公司是赵跃宝指定的技术合作伙伴
+
+    </div>
+</div>

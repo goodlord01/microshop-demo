@@ -1,0 +1,253 @@
+<style>
+    #market {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+    }
+
+    #market > div:nth-child(1) {
+        position: absolute;
+        width: 80%;
+        top: 0;
+        left: 10%;
+    }
+
+    #market > div:nth-child(2) {
+        position: absolute;
+        width: 100%;
+        top: 64%;
+        left: 0;
+    }
+
+    #market .close {
+        position: absolute;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        top: 5%;
+        right: 5%
+    }
+
+    #market .getPrize {
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+        height: 100px;
+        bottom: 0;
+        left: 0
+    }
+
+    #market .table-head {
+        background-color: #f15d35;
+        width: 100%;
+        text-align: center;
+        position: relative;
+    }
+
+    #market .table-head .table-head-font {
+        font-size: 16px;
+        color: #ffffff;
+    }
+
+    #market .table-head #table-head-count {
+        font-size: 20px;
+        color: #7d5d20;
+        padding: 0 4px;
+    }
+
+    #market .table-body {
+        font-size: 14px;
+        color: #ab872b;
+        padding: 4px;
+        text-align: center;
+        height: 160px;
+        overflow: hidden;
+    }
+
+    #market .table-body > div {
+        padding: 2px;
+    }
+
+    #market .table-body > div > span:nth-child(1) {
+        display: inline-block;
+        width: 32%;
+        overflow: hidden;
+        word-break: break-all;
+        word-wrap: break-word;
+        text-overflow: ellipsis;
+    }
+
+    #market .table-body > div > span:nth-child(2) {
+        display: inline-block;
+        width: 28%;
+        overflow: hidden;
+        word-break: break-all;
+        word-wrap: break-word;
+        text-overflow: ellipsis;
+    }
+
+    #market .table-body > div > span:nth-child(3) {
+        display: inline-block;
+        width: 35%;
+        overflow: hidden;
+        word-break: break-all;
+        word-wrap: break-word;
+        text-overflow: ellipsis;
+    }
+
+    #market .width-100 {
+        width: 100%;
+    }
+
+    #prize, #noPrize {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+    }
+
+    #prize > div:nth-child(1) {
+        width: 80%;
+        position: absolute;
+        left: 10%;
+        top: 20%;
+    }
+
+    #noPrize > div:nth-child(1) {
+        width: 80%;
+        position: absolute;
+        left: 10%;
+        top: 30%;
+    }
+
+    #prize > div:nth-child(1) > img:nth-child(1) {
+        width: 100%;
+    }
+
+    #noPrize > div:nth-child(1) > img:nth-child(1) {
+        width: 100%;
+    }
+
+    #prize .return {
+        position: absolute;
+        display: inline-block;
+        width: 80%;
+        /* height: 100px; */
+        bottom: 18%;
+        left: 10%;
+    }
+
+    #prize .return1 {
+        position: absolute;
+        display: inline-block;
+        width: 80%;
+        /* height: 100px; */
+        bottom: 5%;
+        left: 10%;
+    }
+
+    #noPrize .return {
+        position: absolute;
+        display: inline-block;
+        width: 100%;
+        height: 100px;
+        bottom: 0;
+        left: 0
+    }
+
+    #prize .amount {
+        position: absolute;
+        width: 60%;
+        height: 20%;
+        top: 20%;
+        left: 20%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #prize .amountDesc {
+        position: absolute;
+        width: 80%;
+        height: 15%;
+        bottom: 30%;
+        left: 10%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #prize .amount > span:nth-child(1) {
+        font-size: 40px;
+        color: #cf0a15;
+        font-weight: bold;
+    }
+
+    #prize .amount > span:nth-child(2) {
+        font-size: 24px;
+        color: #cf0a15;
+        font-weight: bold;
+    }
+
+    #prize .amountDesc > span {
+        font-size: 20px;
+        color: #0f0f0f;
+        font-weight: bold;
+    }
+</style>
+
+<div id="market" ng-show="vm.showMarket && vm.marketImageLoadedFlag">
+    <div>
+        <img src="assets/img/market/market.png" class="width-100" imageonload="vm.marketImageLoaded()">
+        <a class='close' ng-click="vm.showMarket = false"></a>
+        <a class='getPrize' ng-click="vm.getPrizeClick()"></a>
+    </div>
+
+    <div ng-show="vm.showDrawRecords && vm.marketImageLoadedFlag">
+        <div class="table-head">
+            <span class="table-head-font">已有<span id="table-head-count">{{vm.drawRecordsNum}}</span>人拆中红包</span>
+        </div>
+        <div class="table-body">
+            <div ng-repeat="item in vm.drawRecords">
+                <span>{{item.prize_account_name}}</span>
+                <span>{{item.created_datetime | date:'yyyy-MM-dd'}}</span>
+                <span>拆中{{item.amount}}元红包</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="prize" ng-show="vm.showPrize">
+    <div>
+        <img src="assets/img/market/prize.png">
+
+        <img class='return' src="assets/img/market/prize-button01.png" ng-click="vm.getPrizeReturnClickAndThumb()">
+        <img class='return1' src="assets/img/market/prize-button02.png" ng-click="vm.getPrizeReturnClick()">
+
+        <div class="amount">
+            <span>{{vm.drawPrizedAmount}}</span>
+            <span>元</span>
+        </div>
+        <div class="amountDesc">
+            <span>恭喜您获得</span>
+            <span>{{vm.drawPrizedAmount}}</span>
+            <span>元红包</span>
+        </div>
+    </div>
+</div>
+
+<div id="noPrize" ng-show="vm.showNoPrize">
+    <div>
+        <img src="assets/img/market/no-prize.png">
+        <a class='return' ng-click="vm.showNoPrize = false"></a>
+    </div>
+</div>
