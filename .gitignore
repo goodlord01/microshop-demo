@@ -19,7 +19,7 @@ logs/
 *.log
 
 bower.json
-
+.DS_Store
 c:
 
 node_modules/
