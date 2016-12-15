@@ -794,7 +794,7 @@ return e}}}else return d(a)}}]}])})(window,window.angular);
 
   function config($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/home/');
+    $urlRouterProvider.otherwise('/home');
 
     $stateProvider
         .state('home', {
